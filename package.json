@@ -1,0 +1,30 @@
+{
+  "name": "number-romannumeral-converter",
+  "version": "1.0.0",
+  "description": "REST API that converts a number to Roman numerals Vinculum format",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nazimamin/number-to-roman-numeral-vinculum.git"
+  },
+  "keywords": [
+    "roman",
+    "numeral",
+    "vinculum",
+    "converter"
+  ],
+  "author": "nazimamin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nazimamin/number-to-roman-numeral-vinculum/issues"
+  },
+  "homepage": "https://github.com/nazimamin/number-to-roman-numeral-vinculum#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+  }
+}
