@@ -1,6 +1,7 @@
 const path = require('path');
 const { NODE_ENV = 'production' } = process.env;
 const NodemonPlugin = require('nodemon-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   entry: './src/index.js',
@@ -13,5 +14,9 @@ module.exports = {
   resolve: {
     extensions: ['.js']
   },
-  plugins: [new NodemonPlugin()]
+  plugins: [new NodemonPlugin()],
+  externals: [nodeExternals()],
+  externalsPresets: {
+    node: true
+  }
 };
