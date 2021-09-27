@@ -15,8 +15,8 @@ module.exports = {
     extensions: ['.js']
   },
   plugins: [new NodemonPlugin()],
-  externals: [nodeExternals()],
+  externals: [nodeExternals()], // ignores node_modules such as express js while bundling
   externalsPresets: {
-    node: true
+    node: true // ignores node built ins such as fs/path etc.
   }
 };

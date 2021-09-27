@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "build": "webpack"
+    "build": "webpack", 
+    "start:dev": "webpack -w", 
+    "start": "node dist/index.js"
   },
   "repository": {
     "type": "git",
