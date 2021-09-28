@@ -12,7 +12,15 @@ module.exports = {
     filename: 'index.js'
   },
   resolve: {
-    extensions: ['.js']
+    extensions: ['.js'],
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+      '@configs': path.resolve(__dirname, 'src/configs'),
+      '@controllers': path.resolve(__dirname, 'src/controllers'),
+      '@routes': path.resolve(__dirname, 'src/routes'),
+      '@services': path.resolve(__dirname, 'src/services'),
+      '@utils': path.resolve(__dirname, 'src/utils')
+    }
   },
   plugins: [new NodemonPlugin()],
   externals: [nodeExternals()], // ignores node_modules such as express js while bundling

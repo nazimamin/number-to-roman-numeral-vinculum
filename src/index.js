@@ -1,6 +1,10 @@
-const express = require('express');
-const app = express();
-const port = 3000;
+import express from 'express';
+import { envs } from '@configs';
+import { romanNumeralRouter } from '@routes';
 
-app.get('/', (req, res) => res.send('Hello Husky!'));
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+const { PORT = 8080 } = envs;
+const app = express();
+
+app.get('/', romanNumeralRouter);
+
+app.listen(PORT, () => console.log(`App listening on port ${PORT}!`));

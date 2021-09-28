@@ -4,13 +4,15 @@
   "description": "REST API that converts a number to Roman numerals Vinculum format",
   "main": "index.js",
   "scripts": {
-    "test": "test",
     "build": "webpack",
-    "start:dev": "webpack -w",
-    "start": "node dist/index.js",
-    "pre-commit": "lint-staged",
     "lint": "eslint . --ext .ts,.js",
-    "prepare": "husky install"
+    "pre-commit": "lint-staged",
+    "prepare": "husky install",
+    "prepush": "npm run lint && npm run test && npm run build",
+    "start:watch": "webpack -w",
+    "start": "npm run build && node ./dist/index.js",
+    "test": "jest --config ./jest.config.js --coverage",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -29,7 +31,9 @@
   },
   "homepage": "https://github.com/nazimamin/number-to-roman-numeral-vinculum#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-status-monitor": "^1.3.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
@@ -38,11 +42,13 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
+    "eslint-import-resolver-webpack": "^0.13.1",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^5.1.0",
     "husky": "^7.0.2",
+    "jest": "^27.2.2",
     "lint-staged": "^11.1.2",
     "nodemon": "^2.0.13",
     "nodemon-webpack-plugin": "^4.5.2",
