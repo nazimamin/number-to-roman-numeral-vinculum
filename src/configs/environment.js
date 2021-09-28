@@ -7,4 +7,5 @@ const loadedEnvs = dotenv.config();
 if (loadedEnvs.error) {
   throw loadedEnvs.error;
 }
+
 export const { parsed: envs } = loadedEnvs;
