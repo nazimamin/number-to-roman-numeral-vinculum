@@ -3,8 +3,8 @@ import expressStatus from 'express-status-monitor';
 import expressPinoLogger from 'express-pino-logger';
 import swaggerUi from 'swagger-ui-express';
 
-import { APPLICATION_ENVS, healthCheckConfigs, logger, swaggerSpecs } from '@configs';
-import { romanNumeralRouter, globalRouter } from '@routes';
+import { APPLICATION_ENVS, healthCheckConfigs, logger, swaggerSpecs } from '@configs/index';
+import { romanNumeralRouter, globalRouter } from '@routes/index';
 
 const app = express();
 
@@ -32,5 +32,8 @@ app.use(express.json());
 app.use('/', romanNumeralRouter);
 app.use('*', globalRouter);
 
-// starts up the server
-app.listen(APPLICATION_ENVS.port, () => console.log(`App listening on port ${APPLICATION_ENVS.port}!`));
+if (APPLICATION_ENVS.environment !== 'test') {
+  // starts up the server
+  app.listen(APPLICATION_ENVS.port, () => console.log(`App listening on port ${APPLICATION_ENVS.port}!`));
+}
+export default app;

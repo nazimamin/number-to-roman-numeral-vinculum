@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { APPLICATION_ENVS } from '@configs';
-import { romanNumeralVinculumConverterController } from '@controllers';
+import { APPLICATION_ENVS } from '@configs/constants';
+import { romanNumeralVinculumConverterController } from '@controllers/index';
 
 const romanNumeralRouter = Router();
 
@@ -30,9 +30,6 @@ const romanNumeralRouter = Router();
  *        422:
  *          description: Bad request. Invalid inputs
  */
-romanNumeralRouter.get(
-  `${APPLICATION_ENVS.romanNumeralConverterEndpoint}`,
-  romanNumeralVinculumConverterController
-);
+romanNumeralRouter.get(`${APPLICATION_ENVS.romanNumeralConverterEndpoint}`, romanNumeralVinculumConverterController);
 
 export { romanNumeralRouter };

@@ -12,7 +12,7 @@ export const healthCheckConfigs = {
   healthChecks: [
     {
       protocol: 'http',
-      path: `${APPLICATION_ENVS.romanNumeralConverterEndpoint}`,
+      path: `${APPLICATION_ENVS.romanNumeralConverterEndpoint}?query=4`,
       host: `${APPLICATION_ENVS.hostname}`,
       port: `${APPLICATION_ENVS.port}`
     }

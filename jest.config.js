@@ -1,4 +1,5 @@
 module.exports = {
+  roots: ['<rootDir>'],
   testMatch: ['<rootDir>/test/**/*spec.js'],
   moduleDirectories: ['node_modules', 'src'],
   moduleNameMapper: {
