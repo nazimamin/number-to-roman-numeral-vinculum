@@ -112,6 +112,8 @@ In order to make it easier for us to import/usage packages, webpack/jest/eslint 
 
 You can change aliasing in `webpack.config.js` under `resolve -> extension -> alias` object.
 
+Note: If you use VSCode and have issues with peeking with module aliasing, take a look [here for a solution](https://github.com/microsoft/vscode/issues/16320).
+
 ## Metrics, Monitoring, Logging, Documentation, Error Handling
 
 ### Metrics and Monitoring <a name = "monitoring"></a>
