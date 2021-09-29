@@ -1,4 +1,4 @@
-import { CONSTANTS } from './constants.js';
+import { APPLICATION_ENVS } from './constants.js';
 
 /**
  * Configurations for express-status-monitor
@@ -7,14 +7,14 @@ import { CONSTANTS } from './constants.js';
  */
 
 export const healthCheckConfigs = {
-  title: `${CONSTANTS.appMonitoringTitle}`,
-  path: `${CONSTANTS.apiMonitoringEndpoint}`,
+  title: `${APPLICATION_ENVS.appMonitoringTitle}`,
+  path: `${APPLICATION_ENVS.apiMonitoringEndpoint}`,
   healthChecks: [
     {
       protocol: 'http',
-      path: `${CONSTANTS.romanNumeralConverterEndpoint}`,
-      host: `${CONSTANTS.hostname}`,
-      port: `${CONSTANTS.port}`
+      path: `${APPLICATION_ENVS.romanNumeralConverterEndpoint}`,
+      host: `${APPLICATION_ENVS.hostname}`,
+      port: `${APPLICATION_ENVS.port}`
     }
   ]
 };

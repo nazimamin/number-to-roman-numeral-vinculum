@@ -4,9 +4,9 @@
  */
 
 import pino from 'pino';
-import { CONSTANTS } from './constants';
+import { APPLICATION_ENVS } from './constants';
 
-const isDevEnv = CONSTANTS.environment === 'development';
+const isDevEnv = APPLICATION_ENVS.environment === 'development';
 
 // Custom log levels. By default we'll always log http requests
 const levels = {
@@ -26,5 +26,5 @@ export const logger = pino(
     level: 'http',
     prettyPrint: isDevEnv // only prettify logs in dev environment for easier read
   },
-  isDevEnv ? null : CONSTANTS.logLocation // only write to file in production
+  isDevEnv ? null : APPLICATION_ENVS.logLocation // only write to file in production
 );

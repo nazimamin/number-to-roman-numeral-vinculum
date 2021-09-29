@@ -1,5 +1,6 @@
 import { Router } from 'express';
-import { CONSTANTS } from '@configs';
+import { APPLICATION_ENVS } from '@configs';
+import { romanNumeralVinculumConverterController } from '@controllers';
 
 const romanNumeralRouter = Router();
 
@@ -15,7 +16,7 @@ const romanNumeralRouter = Router();
  *     produces:
  *       - text/plain
  *     parameters:
- *       - in: path
+ *       - in: query
  *         name: query
  *         required: true
  *         description: Numeric value to be converted to Roman numeral Vinculum.
@@ -30,11 +31,8 @@ const romanNumeralRouter = Router();
  *          description: Bad request. Invalid inputs
  */
 romanNumeralRouter.get(
-  `${CONSTANTS.romanNumeralConverterEndpoint}`,
-  (req, res) => {
-    req.log.info('calling routes');
-    res.status(200).send('utf-8 octet-stream');
-  }
+  `${APPLICATION_ENVS.romanNumeralConverterEndpoint}`,
+  romanNumeralVinculumConverterController
 );
 
-export default romanNumeralRouter;
+export { romanNumeralRouter };

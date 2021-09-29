@@ -6,7 +6,7 @@ import { envs } from './environment';
  * Note: Ideally, we would derive configurations from a database and inject the configs context into the app module on run-time
  */
 
-export const CONSTANTS = {
+export const APPLICATION_ENVS = {
   environment: `${envs.NODE_ENV}` || process.env.NODE_ENV,
   appTitle: `${envs.APP_TITLE || 'Roman Numeral Converter'}`,
   appDescription: `${
@@ -33,4 +33,33 @@ export const CONSTANTS = {
   }`,
 
   logLocation: `${envs.LOG_LOCATION || 'app.log'}`
+};
+
+export const LOWER_LIMIT = 1;
+
+export const UPPER_LIMIT = 2200000000;
+
+export const INVALID_NUMBER_HINT = `A valid parameter of type number between ${LOWER_LIMIT} and ${UPPER_LIMIT} must be supplied.`;
+
+export const ERRORS = {
+  MISSING_PARAM: {
+    statusCode: 400,
+    message: `Missing parameter. ${INVALID_NUMBER_HINT}`
+  },
+  INVALID_PARAM: {
+    statusCode: 422,
+    message: `Invalid parameter. ${INVALID_NUMBER_HINT}`
+  },
+  NOT_FOUND: {
+    statusCode: 404,
+    message: `Requested resource does not exist.`
+  },
+  INTERNAL_SERVER_ERROR: {
+    statusCode: 500,
+    message: `Failed to process request.`
+  },
+  NOT_IMPLEMENTED: {
+    statusCode: 501,
+    message: 'Not implemented.'
+  }
 };

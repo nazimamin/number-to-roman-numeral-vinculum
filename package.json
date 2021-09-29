@@ -59,6 +59,7 @@
     "nodemon-webpack-plugin": "^4.5.2",
     "pino-pretty": "^7.0.1",
     "prettier": "^2.4.1",
+    "regenerator-runtime": "^0.13.9",
     "webpack": "^5.54.0",
     "webpack-cli": "^4.8.0",
     "webpack-node-externals": "^3.0.0"
@@ -70,6 +71,11 @@
     ],
     "*.{json,md}": [
       "prettier --write"
+    ]
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./test/setupTests.js"
     ]
   }
 }

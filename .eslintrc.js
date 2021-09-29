@@ -19,5 +19,6 @@ module.exports = {
         config: 'webpack.config.js'
       }
     }
-  }
+  },
+  code: 120
 };

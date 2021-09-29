@@ -1,3 +1,2 @@
-import romanNumeralRouter from './roman-numeral-routes';
-
-export { romanNumeralRouter };
+export { romanNumeralRouter } from './roman-numeral-routes';
+export { globalRouter } from './global-routes';
