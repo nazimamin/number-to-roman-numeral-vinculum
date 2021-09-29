@@ -28,8 +28,10 @@ export const romanNumeralVinculumConverterController = (req, res) => {
 
     const romanNumeralVinculum = RomanNumeralConverterService.convertToRomanNumeralVinculum(inputNumber);
 
-    res.status(200).send(romanNumeralVinculum);
+    res.status(200);
+    res.send(romanNumeralVinculum);
   } catch (err) {
-    res.status(err.statusCode).send(err.message);
+    res.status(err.statusCode);
+    res.send(err.message);
   }
 };
